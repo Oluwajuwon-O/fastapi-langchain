@@ -1,8 +1,8 @@
-fastapi=0.110.3
-uvicorn=0.23.2
-langchain=0.2.2
-langchain_community=0.2.2
-langchain_openai=0.1.8
-python-dotenv=1.0.1
-requests=2.32.2
-numexpr=2.10.0
+fastapi==0.110.3
+uvicorn==0.23.2
+langchain==0.2.2
+langchain_community==0.2.2
+langchain_openai==0.1.8
+python-dotenv==1.0.1
+requests==2.32.2
+numexpr==2.10.0
