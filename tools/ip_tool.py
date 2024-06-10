@@ -11,10 +11,13 @@ from langchain_core.tools import StructuredTool
 
 # Define the schema for the IP information request
 class IPInfo(BaseModel):
-    ip_address: str = Field(description = "ip address")
+    ip_address: str = Field(description = "the ip address we want to fetch the information about e.g. 102.128.192.0, 41.203.78.171")
 
 # Function to fetch IP information from ipapi.co    
 def fetch_ip_info(ip_address : str) -> str:
+    ''' 
+    Fetch information about an ip address provided
+    '''
     url = f'https://ipapi.co/{ip_address}/json/'
     response = requests.get(url)
     if response.status_code == 200:
@@ -25,7 +28,10 @@ def fetch_ip_info(ip_address : str) -> str:
 
 # Define the IP information tool using StructuredTool
 ip_info_tool = StructuredTool.from_function(func= fetch_ip_info, 
-                                            name= 'fetch information on the IP address supplied',
-                                            description= 'fetch ip address information from ipapi.co',
-                                            args_schema= IPInfo, 
-                                            return_direct= True)
+                                            name= 'fetch_ip_info',
+                                            description= '''
+                                            Fetch highly detailed information about a ip address.
+                                            
+                                            '''
+                                            ,
+                                            args_schema= IPInfo)

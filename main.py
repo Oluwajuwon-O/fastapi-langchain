@@ -31,8 +31,11 @@ agent = initialize_agent(tools, llm, agent='zero-shot-react-description', verbos
 def prompt(question: str):
     # Invoke the agent with the provided question
     result = agent.invoke(question)
-    return {'output': result}
+    return result['output']
 
+question = 'what is cube root of 75'
+result = prompt(question)
+print(result)
 # Entry point for running the FastAPI application with uvicorn
-if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='127.0.0.1', port=8000)
