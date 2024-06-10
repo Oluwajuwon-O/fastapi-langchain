@@ -26,8 +26,6 @@ def fetch_weather_info(city:str) -> str:
     
     '''
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={weather_api_key}&units=metric"
-    print('city:',city)
-    print('url:',url)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
