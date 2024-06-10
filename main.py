@@ -32,7 +32,6 @@ def prompt(question: str):
     result = agent.invoke(question, handle_parsing_errors= True)
     return result['output']
 
-
 # # Entry point for running the FastAPI application with uvicorn
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)

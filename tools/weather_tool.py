@@ -38,8 +38,6 @@ weather_info_tool = StructuredTool.from_function(func=fetch_weather_info,
                                                 name= "fetch_weather_info",
                                                 description= '''Fetch highly detailed weather information about a city.
                                                 In your answer, include information the following details: coordinate (coord), weather, temperature (main), 
-                                                humidity (main), windspeed (wind), visibility
+                                                humidity (main), windspeed (wind), visibility. 
                                                 ''',
                                                 args_schema= WeatherInfo)
-
-print(weather_info_tool.args)
