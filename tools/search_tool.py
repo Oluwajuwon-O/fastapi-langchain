@@ -1,3 +1,9 @@
+'''
+Search tool for accessing information on the internet.
+Employs Wikipedia
+'''
+
+
 # Import necessary libraries
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
